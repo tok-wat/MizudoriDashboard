@@ -1,0 +1,95 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+       
+        <!-- Bootstrap Javascript(jQuery含む) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel ="stylesheet"  href="style.css" type="text/css">
+    <script src = "./script.js"></script>
+</head>
+  
+<body>
+    <nav class="navbar navbar-expand-sm  mb-3" style="background-color: #0654bb; color:white">
+        <div class="row col-12 p-2 justify-content-center" > 
+          <div class ="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="title">【非公式】湿地センターへようこそ</a></div>
+          <div class="row col-xs-12 col-sm-8 col-md-8 col-lg-8 justify-content-end">
+            <div class= "col-10" id="calendar">日付</div>
+            <div class= "col-2" id="clock">時刻</div>
+        </div>          
+   </nav>
+    <div class="container col-12 mx-2 p-2 ">
+        <!-- コンテナ -->
+        <div class="row col-12">
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                <!-- 左列 -->
+                    <div class="row p-2 justify-content-center">
+                      <div class="col-xs-5 col-sm-5 col-md-2 col-lg-3 m-2 p-0" id="tide_now">
+                          潮位
+                      </div> 
+                      <div class="col-xs-5 col-sm-5 col-md-2 col-lg-2 m-2 p-0" id="luna_age">
+                          潮名
+                      </div> 
+                      <div class="col-xs-5 col-sm-5 col-md-2 col-lg-3 m-2 p-0" id="high_tide">
+                          満潮
+                      </div> 
+                      <div class="col-xs-5 col-sm-5 col-md-2 col-lg-3 m-2 p-0" id="low_tide">
+                          干潮
+                      </div> 
+                  </div>
+                  <div class="row justify-content-center p-2">
+                      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 p-3" id="tide_graph">
+                          <h1>Tide Graph at Naha Port</h1>
+                          <h3>那覇港の潮位</h3>
+                          <canvas id="chart" class=" p-3 m-2"></canvas>
+                          <p style="text-align: right; color:dimgrey; font-size:70%">
+                          気象庁潮位表 那覇より作成 https://www.data.jma.go.jp/kaiyou/db/tide/suisan/                         
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 p-2">
+                          <div class="col-12 p-2">
+                            <h1>Live Camera: Kohagura (Northern Side)</h1>
+                            <h3>現在のようす：古波蔵</h3>
+                            <img id="kohagura" class="p-2 img-fluid" src="http://www.bousai.okinawa.jp/river/kasen/img_cam/p-16.jpg">
+                          </div>
+                          <div class="col-12 p-2">
+                            <h1>Live Camera: Kyohara (Southern Side)</h1>
+                            <h3>現在のようす：鏡原</h3>
+                            <img id="kyouhara" class="p-2 img-fluid" src="http://www.bousai.okinawa.jp/river/kasen/img_cam/p-15.jpg">
+                            <p style="text-align: right; color:dimgrey; font-size:70%">
+                            沖縄県河川情報システム http://www.bousai.okinawa.jp/river/kasen/
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 p-0">
+                <!-- 右列 -->
+                <div class ="col-12 p-2 m-2" id="tenki" style="text-align:center">
+                    <!-- https://weatherwidget.org/ja/　から埋め込み -->
+                    <div id="ww_1e0974972ce1f" v='1.3' loc='id' a='{"t":"horizontal","lang":"ja","sl_lpl":1,"ids":["wl6874"],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"#FFFFFF","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"rgba(6,84,187,1)","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_phw":3}'>Weather for the Following Location: <a href="https://2ua.org/jpn/naha/map/" id="ww_1e0974972ce1f_u" target="_blank">Naha map, Japan</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_1e0974972ce1f"></script>
+                </div>
+
+                <div class ="col-10 p-2 mx-auto" id="tweet"  >
+                    <a class="twitter-timeline" data-lang="ja" href="https://twitter.com/Mankomizudori?ref_src=twsrc%5Etfw">Tweets by Mankomizudori</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> </div>
+                 </div>
+
+            </div>
+        </div>
+
+    
+    </div>
+</body>
+<script>
+
+let tideTable = readTable('tide.txt')
+let tideArray = getTideArray(tideTable)
+tide_now(tideArray)
+luna_age('luna_age.csv')
+tide_high(tideTable)
+drawLineChart(tideArray)
+setInterval('tide_now(tideArray)', 60000);
+setInterval('drawLineChart(tideArray)', 3600000);
+setInterval('reload()', 600000);
+
+</script>

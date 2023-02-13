@@ -1,0 +1,49 @@
+h1{ 
+    padding: 0.5rem 0rem 0.2rem 0.5rem;
+    margin-bottom: 0.2rem;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 16px;
+    border-bottom: 1px solid grey;
+}
+
+h2{ 
+    padding: 0.5rem 0rem 0.2rem 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 400%;
+    text-align: center;
+    font-weight: bold;
+}
+
+h3{ 
+    padding: 0.2rem 0rem 0.2rem 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: normal;
+} 
+
+li{
+    list-style-type:none;
+    font-size: 150%;
+    padding: 0.3rem;
+}
+
+#title{
+    color: white;
+    font-size:140%;
+    font-weight:bold;
+}
+
+#clock{
+    color: white;
+    font-size:large;
+}
+
+#calendar{
+    color: white;
+    font-size:large;
+    font-weight:bold;
+    text-align: right;
+}
+
